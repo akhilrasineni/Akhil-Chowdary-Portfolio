@@ -30,7 +30,7 @@ export const ArtisticExperience: React.FC<{ exp: Experience; index: number }> = 
           
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 border-b-2 border-black/5 pb-4">
             <div>
-              <h3 className="text-2xl font-black text-black uppercase tracking-tighter">{exp.company}</h3>
+              <h3 className="text-xl sm:text-2xl font-black text-black uppercase tracking-tighter">{exp.company}</h3>
               <div className="text-lg font-bold text-gray-600 font-mono">{exp.role}</div>
             </div>
             <div className="hidden md:block">

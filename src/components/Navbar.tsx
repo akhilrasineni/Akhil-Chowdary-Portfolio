@@ -24,13 +24,13 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4 glass" : "py-8 bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4 glass" : "py-4 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <motion.a
             href="#"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-3xl font-black tracking-tighter text-black uppercase border-2 border-black px-2 bg-white z-50"
+            className="text-2xl sm:text-3xl font-black tracking-tighter text-black uppercase border-2 border-black px-2 bg-white z-50"
           >
             RAC<span className="text-black">.</span>
           </motion.a>

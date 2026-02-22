@@ -9,7 +9,7 @@ export const Marquee = ({ items }: { items: string[] }) => {
         transition={{ ease: 'linear', duration: 40, repeat: Infinity, repeatType: 'loop' }}
       >
         {[...items, ...items].map((item, i) => (
-          <div key={i} className="text-5xl md:text-7xl font-black text-transparent uppercase tracking-tighter cursor-default" style={{ WebkitTextStroke: "2px white" }}>
+          <div key={i} className="text-4xl sm:text-5xl md:text-7xl font-black text-transparent uppercase tracking-tighter cursor-default" style={{ WebkitTextStroke: "2px white" }}>
             {item} <span className="text-white">.</span>
           </div>
         ))}

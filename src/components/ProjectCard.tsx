@@ -89,7 +89,7 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
             {project.description}
           </p>
 
-          <div className="flex gap-3 mt-auto pt-4 border-t-4 border-gray-100 relative z-10">
+          <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t-4 border-gray-100 relative z-10">
             <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-black text-white font-black text-sm uppercase hover:bg-white hover:text-black border-2 border-black transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
               View Live <ExternalLink className="w-4 h-4" />
             </a>

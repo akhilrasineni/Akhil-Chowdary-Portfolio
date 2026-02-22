@@ -24,7 +24,7 @@ export const Hero = () => {
   return (
     <section 
       id="about" 
-      className="min-h-screen flex items-center pt-20 px-6 relative overflow-hidden bg-white"
+      className="min-h-screen flex flex-col justify-center pt-10 sm:pt-20 px-6 relative overflow-hidden bg-white"
     >
       {/* Paper Texture */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply"></div>
@@ -32,7 +32,7 @@ export const Hero = () => {
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10 py-16 md:py-0">
         <motion.div
           variants={container}
           initial="hidden"
@@ -44,7 +44,7 @@ export const Hero = () => {
             System Online
           </motion.div>
           
-          <motion.h1 variants={item} className="text-6xl md:text-7xl font-display font-bold leading-[0.9] mb-8 tracking-tighter text-black">
+          <motion.h1 variants={item} className="text-5xl sm:text-6xl md:text-7xl font-display font-bold leading-[0.9] mb-8 tracking-tighter text-black">
             FULLSTACK <br /> 
             <span className="text-transparent stroke-text" style={{ WebkitTextStroke: "2px black", color: "transparent" }}>DEVELOPER</span>
           </motion.h1>
@@ -55,12 +55,12 @@ export const Hero = () => {
             // specializing in building exceptional digital experiences.
           </motion.p>
           
-          <motion.div variants={item} className="flex gap-4">
+          <motion.div variants={item} className="flex flex-col sm:flex-row gap-4">
             <a href="#projects" className="group flex items-center gap-2 px-8 py-4 bg-black text-white font-black uppercase tracking-widest hover:bg-white hover:text-black border-2 border-black transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
               My Projects
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href="https://github.com/akhilrasineni" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-black font-bold text-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
                 <Github className="w-5 h-5" />
                 <span className="font-mono uppercase text-sm">Github</span>
@@ -77,14 +77,14 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative aspect-square md:h-[500px] border-4 border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]"
+          className="relative h-[300px] md:h-[500px] md:aspect-square border-4 border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]"
         >
           <div className="absolute top-0 left-0 w-full h-full border-b-2 border-r-2 border-black/10 pointer-events-none grid grid-cols-4 grid-rows-4">
              {[...Array(16)].map((_, i) => <div key={i} className="border-t-2 border-l-2 border-black/5"></div>)}
           </div>
 
           <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden">
-            <span className="text-5xl md:text-7xl font-black text-black/5 uppercase tracking-widest -rotate-12 select-none whitespace-nowrap">
+            <span className="text-4xl sm:text-5xl md:text-7xl font-black text-black/5 uppercase tracking-widest -rotate-12 select-none whitespace-nowrap">
               AKHIL RASINENI
             </span>
           </div>
