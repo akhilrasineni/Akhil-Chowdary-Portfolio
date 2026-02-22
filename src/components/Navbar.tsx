@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState("About");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -14,13 +15,18 @@ export const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const navLinks = ["About", "Projects", "Experience", "Contact"];
+  const navLinks = [
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4 bg-white border-b-2 border-black" : "py-8 bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4 glass" : "py-8 bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <motion.a 
+          <motion.a
             href="#"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -28,15 +34,27 @@ export const Navbar = () => {
           >
             RAC<span className="text-black">.</span>
           </motion.a>
-          
-          <div className="hidden md:flex gap-8 text-sm font-bold text-black uppercase tracking-widest">
+
+          <div
+            className="hidden md:flex gap-2 text-sm font-bold text-black uppercase tracking-widest bg-white border-2 border-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            onMouseLeave={() => setHoveredLink("About")}
+          >
             {navLinks.map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="hover:underline decoration-2 underline-offset-4 transition-all"
+              <a
+                key={item.name}
+                href={item.href}
+                className="relative px-4 py-2 transition-colors"
+                onMouseEnter={() => setHoveredLink(item.name)}
               >
-                {item}
+                {hoveredLink === item.name && (
+                  <motion.div
+                    layoutId="pill"
+                    className="absolute inset-0 bg-black"
+                    style={{ borderRadius: 2 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  />
+                )}
+                <span className={`relative z-10 ${hoveredLink === item.name ? 'text-white' : ''}`}>{item.name}</span>
               </a>
             ))}
           </div>
@@ -58,12 +76,12 @@ export const Navbar = () => {
       >
         {navLinks.map((item) => (
           <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
+            key={item.name}
+            href={item.href}
             onClick={toggleMenu}
             className="text-4xl font-black text-black uppercase tracking-tighter"
           >
-            {item}
+            {item.name}
           </a>
         ))}
       </motion.div>

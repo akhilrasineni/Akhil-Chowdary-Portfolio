@@ -2,14 +2,18 @@ import { motion } from "motion/react";
 
 export const Marquee = ({ items }: { items: string[] }) => {
   return (
-    <div className="relative flex overflow-hidden py-4 group bg-white transform origin-left -rotate-3">
-      <div className="flex animate-marquee whitespace-nowrap gap-12">
+    <div className="relative h-full w-full flex items-center justify-center bg-black">
+      <motion.div
+        className="flex whitespace-nowrap gap-12 transform -rotate-2"
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{ ease: 'linear', duration: 40, repeat: Infinity, repeatType: 'loop' }}
+      >
         {[...items, ...items].map((item, i) => (
-          <div key={i} className="text-5xl md:text-7xl font-black text-transparent stroke-text uppercase tracking-tighter hover:text-black transition-colors cursor-default" style={{ WebkitTextStroke: "2px black" }}>
-            {item} <span className="text-black">.</span>
+          <div key={i} className="text-5xl md:text-7xl font-black text-transparent uppercase tracking-tighter cursor-default" style={{ WebkitTextStroke: "2px white" }}>
+            {item} <span className="text-white">.</span>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -37,34 +37,38 @@ export const Hero = () => {
           variants={container}
           initial="hidden"
           animate="show"
+          className="relative z-20"
         >
           <motion.div variants={item} className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest mb-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <span className="w-2 h-2 bg-black animate-pulse"></span>
             System Online
           </motion.div>
           
-          <motion.h1 variants={item} className="text-6xl md:text-9xl font-black leading-[0.9] mb-8 tracking-tighter text-black">
-            DIGITAL <br /> 
-            <span className="text-transparent stroke-text" style={{ WebkitTextStroke: "2px black", color: "transparent" }}>ARCHITECT</span>
+          <motion.h1 variants={item} className="text-6xl md:text-7xl font-display font-bold leading-[0.9] mb-8 tracking-tighter text-black">
+            FULLSTACK <br /> 
+            <span className="text-transparent stroke-text" style={{ WebkitTextStroke: "2px black", color: "transparent" }}>DEVELOPER</span>
           </motion.h1>
           
           <motion.p variants={item} className="text-lg md:text-xl text-black max-w-lg mb-10 leading-relaxed font-mono border-l-4 border-black pl-6">
-            // Full Stack Developer <br/>
-            // Designing systems with precision <br/>
-            // and creative chaos.
+            // I build things for the web. <br/>
+            // I'm a software engineer based in INDIA, <br/>
+            // specializing in building exceptional digital experiences.
           </motion.p>
           
           <motion.div variants={item} className="flex gap-4">
             <a href="#projects" className="group flex items-center gap-2 px-8 py-4 bg-black text-white font-black uppercase tracking-widest hover:bg-white hover:text-black border-2 border-black transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
-              View Projects
+              My Projects
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <div className="flex gap-2">
-              {[Github, Mail].map((Icon, i) => (
-                <a key={i} href={i === 0 ? "https://github.com/akhilrasineni" : "mailto:rasineniakhil@zohomail.com"} target="_blank" rel="noopener noreferrer" className="p-4 bg-white border-2 border-black text-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
-                  <Icon className="w-6 h-6" />
-                </a>
-              ))}
+            <div className="flex gap-4">
+              <a href="https://github.com/akhilrasineni" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-black font-bold text-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                <Github className="w-5 h-5" />
+                <span className="font-mono uppercase text-sm">Github</span>
+              </a>
+              <a href="mailto:rasineniakhil@zohomail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-black font-bold text-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
+                <Mail className="w-5 h-5" />
+                <span className="font-mono uppercase text-sm">Contact Me</span>
+              </a>
             </div>
           </motion.div>
         </motion.div>
@@ -78,11 +82,18 @@ export const Hero = () => {
           <div className="absolute top-0 left-0 w-full h-full border-b-2 border-r-2 border-black/10 pointer-events-none grid grid-cols-4 grid-rows-4">
              {[...Array(16)].map((_, i) => <div key={i} className="border-t-2 border-l-2 border-black/5"></div>)}
           </div>
+
+          <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden">
+            <span className="text-5xl md:text-7xl font-black text-black/5 uppercase tracking-widest -rotate-12 select-none whitespace-nowrap">
+              AKHIL RASINENI
+            </span>
+          </div>
           
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.08)_0%,transparent_70%)]"></div>
           <img 
-            src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" 
+            src="https://lh3.googleusercontent.com/d/1yIpM_LKvN_nfjsKZFdguBfmiGNvMu1Vi" 
             alt="Technical Sketch Animation" 
-            className="w-full h-full object-cover grayscale contrast-125"
+            className="w-full h-full object-cover grayscale contrast-125 relative z-10"
             referrerPolicy="no-referrer"
           />
           
